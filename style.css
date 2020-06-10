@@ -1,0 +1,384 @@
+*{
+	position: absolute;
+}
+
+*:before,
+*:after {
+  content: "";
+  position: absolute; }
+
+html,body{
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+body{
+	font-family: 'Aclonica';
+	font-size: 22px;
+	margin: 0%;
+}
+
+#weather{
+	height: 100%;
+	width: 100%;
+	align-content: center;
+	z-index: -1;
+}
+#weatherData{
+	position: absolute;
+	height: 200px;
+	width: 200px;
+	border : 10px solid black;
+	border-radius: 50%;
+	left: 40%;
+	top: 40%;
+}
+
+#description, #temperature, #location{
+	position: relative;
+	text-align: center;
+	height: 50px;
+	margin-top:10px;
+}
+
+
+.clear{
+	background-image: linear-gradient(#216fbf 0%, #3b7cbf 10%, #68e2fc 60%, #75e2fa 90%);
+}
+
+.rainy, .rain, .drizzle{
+	background-image: linear-gradient(#c3d0de 0%, #b4c4d6 10%, #abc2db 60%, #9bb6d4 90%);
+}
+
+.sunny{
+background-image: linear-gradient(#216fbf 0%, #3b7cbf 10%, #68e2fc 60%, #75e2fa 90%);
+}
+
+.snow{
+	background-image: linear-gradient(#b1e8f2 0%, #b1e8f2 10%,#b1e8f2 60%, #9ae7f5 90%);
+}
+
+.thunderstorm, .tornado, .squall{
+	background-image: linear-gradient(#c3d0de 0%, #b4c4d6 10%, #abc2db 60%, #9bb6d4 90%);
+
+}
+
+.clouds, .cloudy{
+	background-image: linear-gradient(#c3d0de 0%, #b4c4d6 10%, #abc2db 60%, #9bb6d4 90%);
+}
+
+.dust, .smoke, .sand, .ash{
+	background-image: linear-gradient(#bf7021 0%, #c97c2e 10%, #cc935a 60%, #e6b687 90%);
+);
+
+}
+.mist, .fog{
+background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc  90%);
+}
+
+
+
+.container1{
+  left: 2%;
+  width: 30%;
+  height: 70%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+.sun{
+  left: 30%;
+  top: 30%;
+  width: 160px;
+  height: 160px;
+}
+.circle{
+  width: 100px;
+  height: 100px;
+  top: 30px;
+  left: 30px;
+  border-radius: 50%;
+  background-color: orange;
+  box-shadow: 0 0 10px orange, 0 0 20px orange, 0 0 30px orange, 0 0 40px orange, 0 0 50px #fad775, 0 0 100px orange; 
+}
+
+.rays{
+  z-index: -1;
+  top: 30px;
+  left: 30px;
+}
+.ray1, .ray2, .ray3, .ray4, .ray5, .ray6{
+  border-bottom : 30px solid orange;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+}
+
+.ray1{
+  left: 35px;
+  top: -25px;
+  transform: rotate(0deg);
+}
+.ray2{
+  left: 35px;
+  top: 95px;
+  transform: rotate(180deg);
+}
+.ray3{
+  left: 86px;
+  transform: rotate(60deg);
+}
+.ray4{
+  left: -15px;
+  transform: rotate(-60deg);
+}
+.ray5{
+  left: -16px;
+  top: 68px;
+  transform: rotate(-129deg);
+}
+.ray6{
+  left: 86px;
+  top: 70px;
+  transform: rotate(129deg);
+}
+
+.sun {
+  -webkit-animation: rotation 5s linear infinite;
+  -moz-animation:    rotation 5s linear infinite; 
+  -o-animation:      rotation 5s linear infinite; 
+  animation:         rotation 5s linear infinite; 
+}
+
+
+-webkit-@keyframes rotation {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+-moz-@keyframes rotation {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+-o-@keyframes rotation {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg)
+  }
+  100% {
+    transform: rotate(360deg)
+  }
+}
+
+
+.container2{
+  position: absolute;
+  margin: auto;
+  height: 100%;
+  width: 15%;
+  bottom: 0%;
+  left: 0%;
+  z-index: -1;}
+
+.cat{
+  bottom: 0%;
+  left: 20%;
+  height: 250px;
+  width: 150px;
+  animation: myfirst 5s linear 2s infinite;
+}
+
+.face{
+  background-color: #33292b;
+  height: 25%;
+  width: 60%;
+  border-radius: 30%;
+  bottom: 40%;
+  left: 40%;
+}
+
+.ear-left, .ear-right{
+  height: 0%;
+  width: 0%;
+  border-bottom: 1em solid #33292b;
+  border-left: .5em solid transparent;
+  border-right: .5em solid transparent;
+  top: -20%;
+  z-index: -1;
+}
+
+.ear-left{
+  transform: rotate(-30deg);
+}
+
+.ear-right{
+  left: 67%;
+  transform: rotate(30deg);
+}
+
+.inner-left-ear{
+  width: 0%;
+  height: 0%;
+  border-left: 0.5em solid transparent;
+  border-bottom: 1em solid #d36249;
+  right: 5%;
+}
+
+.inner-right-ear{
+  width: 0%;
+  height: 0%;
+  border-right: 0.5em solid transparent;
+  border-bottom: 1em solid #d36249;
+}
+
+.eye-left, .eye-right{
+  height: 30%;
+  width: 30%;
+  border-radius: 50%;
+  background-color: #d2873b;
+
+}
+
+.eye-left{
+  top: 20%;
+  left: 15%;
+}
+
+.eye-right{
+  top: 20%;
+  left: 54%;
+}
+
+.eyeball{
+   width: 80%;
+   height: 80%;
+   border-radius: 50%;
+   background-color: #262626;
+   top: 5%;
+   left: 8%;
+   -webkit-transform-origin: 50%;
+   -webkit-animation: blink 2s infinite;
+}
+
+
+@-webkit-keyframes blink {
+    0%, 100% {
+        transform: scale(1, .05);
+    }
+    5%,
+    95% {
+        transform: scale(1, 1);
+    }
+}
+
+
+.nose{
+  height: 0%;
+  width: 0%;
+  border-top: 0.4em solid #d36149;
+  border-left: 0.3em solid transparent;
+  border-right: 0.3em solid transparent;
+  top: 54%;
+  left: 42%;
+}
+
+.body {
+  height: 35%;
+  width: 70%;
+  background-color: #33292b;
+  border-radius: 65% 0 0  0;
+  bottom: 5%;
+  left: 15%;
+}
+
+.paw-left, .paw-right{
+  background-color: #33292b;
+  height: 15%;
+  width: 25%;
+  border-radius: 0 0 50% 50%;
+}
+.paw-left{
+  bottom: -14%;
+}
+
+.paw-right{
+  bottom: -14%;
+  left: 60%;
+}
+
+.tail{
+  background-color: #33292b;
+  width: 60%;
+  height: 15%;
+  bottom: 5%;
+  left: -60%;
+  border-radius:25% 0 0 25%;
+}
+
+
+@keyframes myfirst {
+  0%   {left:0%; }
+  25%  {left:25%; }
+  50%  {left:50%; }
+  75%  {left:75%; }
+  100% {left:100%; }
+}
+
+
+
+.container3{
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  z-index: -1;
+}
+.whitecloud{
+  display: inline-block;
+  position: relative;
+  width: 220px;
+  height: 30%; 
+}
+
+.cloud1, .cloud2, .cloud3{
+  width: 100px;
+  height: 100px;
+  border-radius: 20% 50%;
+  background-color: white;
+  box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 100px white; 
+}
+.cloud1{
+	left: 50px;	
+	border-color: 2px solid yellow;
+	} 
+.cloud2{
+	top:50px;
+	border-color: 2px solid red;
+	}
+.cloud3{
+	top:50px;
+	left: 100px;
+	border-color: 2px solid green;
+}
+
+
+
+
+
+
