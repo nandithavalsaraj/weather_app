@@ -350,35 +350,95 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
   z-index: -1;
 }
 .whitecloud{
-  display: inline-block;
-  position: relative;
-  width: 220px;
+  width: 100%;
   height: 30%; 
+  
 }
 
-.cloud1, .cloud2, .cloud3{
-  width: 100px;
-  height: 100px;
-  border-radius: 20% 50%;
-  background-color: white;
-  box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 100px white; 
+.cloud{
+  width: 200px;
+  height: 60px;
+  border-radius: 100px;
+  background-color: #fff;
+  position: relative;
+
+  }
+
+
+
+.cloud:before, .cloud:after {
+	content: '';
+	position: absolute; 
+	background: #fff;
+	width: 100px; height: 80px;
+	position: absolute; top: -15px; left: 10px;
+	
+	border-radius: 100px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	
+	-webkit-transform: rotate(30deg);
+	transform: rotate(30deg);
+	-moz-transform: rotate(30deg);
 }
+
+.cloud:after {
+	width: 120px; height: 120px;
+	top: -55px; left: auto; right: 15px;
+}
+
+/*Time to animate*/
 .cloud1{
-	left: 50px;	
-	border-color: 2px solid yellow;
-	} 
-.cloud2{
-	top:50px;
-	border-color: 2px solid red;
-	}
-.cloud3{
-	top:50px;
-	left: 100px;
-	border-color: 2px solid green;
+	opacity: 0.6; 
+	-webkit-animation: moveclouds 15s linear infinite;
+	-moz-animation: moveclouds 15s linear infinite;
+	-o-animation: moveclouds 15s linear infinite;
+}
+.cloud2 {
+	opacity: 0.6; 
+	-webkit-animation: moveclouds 8s linear infinite;
+	-moz-animation: moveclouds 8s linear infinite;
+	-o-animation: moveclouds 8s linear infinite;
+}
+.cloud3 {
+	opacity: 0.6;
+	top:200px; 
+	-webkit-animation: moveclouds 10s linear infinite;
+	-moz-animation: moveclouds 10s linear infinite;
+	-o-animation: moveclouds 10s linear infinite;
+}
+.cloud4 {
+	top:20px;
+	opacity: 0.6; 
+	-webkit-animation: moveclouds 12s linear infinite;
+	-moz-animation: moveclouds 12s linear infinite;
+	-o-animation: moveclouds 12s linear infinite;
 }
 
 
 
+
+  /*box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 100px white; 
+*/
+
+
+@-webkit-keyframes movecloud {
+	0% {margin-left: 100%;}
+	100% {margin-left: 0%;}
+}
+
+@-webkit-keyframes moveclouds {
+	0% {margin-left: 100%;}
+	100% {margin-left: 0%;}
+}
+@-moz-keyframes moveclouds {
+	0% {margin-left: 100%;}
+	100% {margin-left: 0%;}
+}
+@-o-keyframes moveclouds {
+	0% {margin-left: 100%;}
+	100% {margin-left: 0%;}
+}
 
 
 

@@ -12,8 +12,8 @@ function getWeather( cityID ) {
 	document.getElementById('description').innerHTML = data.weather[0].description;
 	document.getElementById('temperature').innerHTML = celcius + '&deg;';
 	document.getElementById('location').innerHTML = data.name;
-	getBackground(data.weather[0].description);
-	//getBackground('snow');
+	//getBackground(data.weather[0].description);
+	getBackground('cloud');
 	
   })
   .catch((err) => {
