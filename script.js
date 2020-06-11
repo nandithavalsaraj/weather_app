@@ -1,5 +1,5 @@
 function getWeather( cityID ) {
-  var key = '63e69be104ab0b3b5bf9cd859b515e70';
+  var key = config.MY_KEY;
   fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
   .then(function(response) { 
   		if (!response.ok)
@@ -94,5 +94,6 @@ function getBackground(description){
 }
 
 window.onload = function(){
-	getWeather(4350049);
+	var cityID = config.MY_CITY;
+	getWeather(cityID);
 }
