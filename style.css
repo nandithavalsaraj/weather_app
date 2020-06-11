@@ -18,6 +18,7 @@ body{
 	margin: 0%;
 }
 
+
 #weather{
 	height: 100%;
 	width: 100%;
@@ -76,7 +77,7 @@ background-image: linear-gradient(#216fbf 0%, #3b7cbf 10%, #68e2fc 60%, #75e2fa 
 background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc  90%);
 }
 
-
+/*Sunny Weather background*/
 
 .container1{
   left: 2%;
@@ -186,6 +187,7 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
   }
 }
 
+/*Mascot Data*/
 
 .container2{
   position: absolute;
@@ -341,6 +343,7 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
 }
 
 
+/*Cloudy Weather background*/
 
 .container3{
   width: 100%;
@@ -363,8 +366,6 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
   position: relative;
 
   }
-
-
 
 .cloud:before, .cloud:after {
 	content: '';
@@ -390,19 +391,20 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
 	top: -55px; left: auto; right: 15px;
 }
 
-/*Time to animate*/
 .cloud1{
 	opacity: 0.6; 
 	-webkit-animation: moveclouds 15s linear infinite;
 	-moz-animation: moveclouds 15s linear infinite;
 	-o-animation: moveclouds 15s linear infinite;
 }
+
 .cloud2 {
 	opacity: 0.6; 
 	-webkit-animation: moveclouds 8s linear infinite;
 	-moz-animation: moveclouds 8s linear infinite;
 	-o-animation: moveclouds 8s linear infinite;
 }
+
 .cloud3 {
 	opacity: 0.6;
 	top:20%; 
@@ -410,8 +412,9 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
 	-moz-animation: moveclouds 10s linear infinite;
 	-o-animation: moveclouds 10s linear infinite;
 }
+
 .cloud4 {
-	top:30%;
+	top:35%;
 	opacity: 0.6; 
 	-webkit-animation: moveclouds 12s linear infinite;
 	-moz-animation: moveclouds 12s linear infinite;
@@ -425,11 +428,6 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
 	-moz-animation: moveclouds 13s linear infinite;
 	-o-animation: moveclouds 13s linear infinite;
 }
-
-
-  /*box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 40px white, 0 0 50px white, 0 0 100px white; 
-*/
-
 
 @-webkit-keyframes moveclouds {
 	0% {margin-left: 100%;}
@@ -445,4 +443,6 @@ background-image: linear-gradient(#3b7cbf 0%, #468acf 10%, #75e2fa 60%, #68e2fc 
 }
 
 
+/*Rainy Weather background*/
+/*Snowy Weather background*/
 

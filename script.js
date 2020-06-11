@@ -1,26 +1,33 @@
 function getWeather( cityID ) {
-  var key = config.MY_KEY;
-  fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
-  .then(function(response) { 
+  var key = config.MY_KEY || 0;
+  if(key!=0){
+  	fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID+ '&appid=' + key)  
+  	.then(function(response) { 
   		if (!response.ok)
 			throw new Error(`Status Code Error: ${response.status}`);
 		return response.json() }) // Convert data to json
-  .then(function(data) {
-    console.log(data);
-    var celcius = Math.round(parseFloat(data.main.temp)-273.15);
-	var fahrenheit = Math.round(((parseFloat(data.main.temp)-273.15)*1.8)+32); 
-	document.getElementById('description').innerHTML = data.weather[0].description;
-	document.getElementById('temperature').innerHTML = celcius + '&deg;';
-	document.getElementById('location').innerHTML = data.name;
-	//getBackground(data.weather[0].description);
-	getBackground('cloud');
+  	.then(function(data) {
+   	 	console.log(data);
+    	var celcius = Math.round(parseFloat(data.main.temp)-273.15);
+		var fahrenheit = Math.round(((parseFloat(data.main.temp)-273.15)*1.8)+32); 
+		document.getElementById('description').innerHTML = data.weather[0].description;
+		document.getElementById('temperature').innerHTML = celcius + '&deg;';
+		document.getElementById('location').innerHTML = data.name;
+		//getBackground(data.weather[0].description);
+		getBackground('cloud');
 	
-  })
-  .catch((err) => {
-		console.log('SOMETHING WENT WRONG WITH FETCH!');
-		console.log(err);
-	});
+  		})
+  	.catch((err) => {
+			console.log('SOMETHING WENT WRONG WITH FETCH!');
+			console.log(err);
+		});
+	}
+	else{
+		document.getElementById('description').innerHTML = "NOT ENOUGH DATA!!";
+		getBackground('cloud');
+	}
 }
+
 
 function getBackground(description){
 	if(description.includes('sunny')){
@@ -94,6 +101,6 @@ function getBackground(description){
 }
 
 window.onload = function(){
-	var cityID = config.MY_CITY;
+	var cityID = config.MY_CITY || 4350049;
 	getWeather(cityID);
 }
