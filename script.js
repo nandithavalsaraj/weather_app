@@ -13,8 +13,8 @@ function getWeather( cityID ) {
 		document.getElementById('description').innerHTML = data.weather[0].description;
 		document.getElementById('temperature').innerHTML = celcius + '&deg;';
 		document.getElementById('location').innerHTML = data.name;
-		//getBackground(data.weather[0].description);
-		getBackground('cloud');
+		getBackground(data.weather[0].description);
+		//getBackground('heavy snow');
 	
   		})
   	.catch((err) => {
@@ -23,7 +23,7 @@ function getWeather( cityID ) {
 		});
 	}
 	else{
-		document.getElementById('description').innerHTML = "NOT ENOUGH DATA!!";
+		document.getElementById('description').innerHTML = "COULD NOT ACCESS API!!";
 		getBackground('cloud');
 	}
 }
@@ -43,7 +43,42 @@ function getBackground(description){
 	else{
 		document.getElementById("whitecloud").style.visibility = "hidden";
 	}
+	if(description.includes('drizzle')){
+		document.getElementById("rainday").style.visibility = "visible";
+		createRain(100);
+	}
+	else{
+		document.getElementById("rainday").style.visibility = "hidden";
+		$('.drop').remove();
+	}
+
+	if(description.includes('rain')){
+		document.getElementById("rainday").style.visibility = "visible";
+		if(description.includes('heavy') || description.includes('Heavy'))
+			{createRain(850);}
+		else{
+			createRain(500);
+		}
+	}
+	else{
+		document.getElementById("rainday").style.visibility = "hidden";
+		$('.drop').remove();
+	}
 	
+	if(description.includes('snow')){
+		document.getElementById("snowday").style.visibility = "visible";
+		if(description.includes('heavy') || description.includes('Heavy'))
+			{createSnow(850);;}
+		else{
+			createSnow(500);;
+		}
+	}
+	else{
+		document.getElementById("snowday").style.visibility = "hidden";
+		$('.snowdrop').remove();
+	}
+
+
 	if(description.includes('clear')){
 		document.getElementById('weather').className = 'clear';
 	}
