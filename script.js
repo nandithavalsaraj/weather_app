@@ -14,8 +14,6 @@ function getWeather( cityID ) {
 		document.getElementById('temperature').innerHTML = celcius + '&deg;';
 		document.getElementById('location').innerHTML = data.name;
 		getBackground(data.weather[0].description);
-		//getBackground('heavy snow');
-	
   		})
   	.catch((err) => {
 			console.log('SOMETHING WENT WRONG WITH FETCH!');
@@ -24,7 +22,6 @@ function getWeather( cityID ) {
 	}
 	else{
 		document.getElementById('description').innerHTML = "COULD NOT ACCESS API!!";
-		getBackground('cloud');
 	}
 }
 
@@ -43,9 +40,10 @@ function getBackground(description){
 	else{
 		document.getElementById("whitecloud").style.visibility = "hidden";
 	}
+
 	if(description.includes('drizzle')){
 		document.getElementById("rainday").style.visibility = "visible";
-		createRain(100);
+		createRain(100,'.rainday');
 	}
 	else{
 		document.getElementById("rainday").style.visibility = "hidden";
@@ -55,15 +53,27 @@ function getBackground(description){
 	if(description.includes('rain')){
 		document.getElementById("rainday").style.visibility = "visible";
 		if(description.includes('heavy') || description.includes('Heavy'))
-			{createRain(850);}
+			{createRain(850,'.rainday');}
 		else{
-			createRain(500);
+			createRain(500,'.rainday');
 		}
 	}
 	else{
 		document.getElementById("rainday").style.visibility = "hidden";
 		$('.drop').remove();
 	}
+
+
+	if(description.includes('thunderstorm')){
+		document.getElementById("thunderday").style.visibility = "visible";
+		createRain(500,'.thunderday');
+	}
+	else{
+		document.getElementById("thunderday").style.visibility = "hidden";
+		$('.drop').remove();
+	}
+
+
 	
 	if(description.includes('snow')){
 		document.getElementById("snowday").style.visibility = "visible";

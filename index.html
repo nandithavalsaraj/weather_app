@@ -28,8 +28,8 @@
 				</div>
 			</div>
 		</div>
-		<div class="container3" id="whitecloud">
-			<div class="whitecloud">
+		<div class="container3" id="whitecloud" style="visibility :hidden;">
+			<div class="whitecloud" >
 				<div class="cloud cloud1" ></div>
 				<div class="cloud cloud2"></div>
 				<div class="cloud cloud3"></div>
@@ -39,10 +39,19 @@
 			
 		</div>
 		<div class="container4">
-			<div id="rainday" class="rainday" style="green;"></div>
+			<div id="rainday" class="rainday" style="visibility :hidden;"></div>
 		</div>
 		<div class="container5">
-			<div id="snowday" class="snowday"></div>
+			<div id="thunderday" class="thunderday" style="visibility :hidden;"></div>
+		</div>
+		<div class="container6">
+			<div id="mistday" class="mistday" style="visibility :hidden;"></div>
+		</div>
+		<div class="container7">
+			<div id="sandday" class="sandday" style="visibility :hidden;"></div>
+		</div>
+		<div class="container8">
+			<div id="snowday" class="snowday" style="visibility :hidden;"></div>
 		</div>
 		<div class="cat">
 			<div class="face">
@@ -77,17 +86,15 @@
  		function randRange(minNum, maxNum){
  			return (Math.floor(Math.random() * (maxNum-minNum+1)+minNum));
  		}
- 		function createRain(nDrops){
+ 		function createRain(nDrops,className){
  			for(i=0;i<nDrops;i++){
  				var dropLeft =randRange(0, 1600);
  				var dropTop = randRange(-1000, 1400);
- 				$('.rainday').append('<div class="drop" id="drop' + i +'"></div');
+ 				$(className).append('<div class="drop" id="drop' + i +'"></div');
  				$('#drop'+i).css('left', dropLeft);
  				$('#drop'+i).css('top',dropTop);
  			}
  		}
-
-
  		function createSnow(nSnowdrop){
  			for(j=0;j<nSnowdrop;j++){
  				var snowdropLeft =randRange(0, 1600);
